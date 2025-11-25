@@ -1,0 +1,312 @@
+/* styles.css
+   Design moderne, responsive + animations simples.
+   Placez ce fichier à la racine à côté de index.html
+*/
+
+/* Reset minimal */
+:root{
+  --accent:#0f766e;   /* couleur principale */
+  --accent-2:#065f5a;
+  --bg:#f7f7f9;
+  --text:#111827;
+  --muted:#6b7280;
+  --glass: rgba(255,255,255,0.6);
+  --radius:12px;
+  --container:1100px;
+  --transition: 300ms cubic-bezier(.2,.9,.3,1);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:var(--text);
+  background: linear-gradient(180deg, #fbfdfe, #f3f7f9);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-top:180px;
+}
+
+/* Container */
+.container{
+  width:94%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:2rem 0;
+}
+
+/* Header */
+.site-header{
+  position:fixed;
+  left:0;right:0;top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.92));
+  border-bottom: 2px solid var(--accent);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  padding:0.8rem 0;
+}
+.logo{
+  font-weight:700;
+  color:var(--accent);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
+  transition:transform 300ms ease;
+  flex-shrink:0;
+}
+.logo:hover{
+  transform:scale(1.05);
+}
+.logo img{
+  height: 120px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:1rem}
+.main-nav a{color:var(--text);text-decoration:none;padding:0.5rem;border-radius:8px;transition:var(--transition)}
+.main-nav a:hover{background:rgba(15,118,110,0.06)}
+
+/* Mobile nav toggle */
+#nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:6px;z-index:50}
+#nav-toggle span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0;border-radius:2px;transition:all 200ms}
+#nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(8px, 8px)}
+#nav-toggle.open span:nth-child(2){opacity:0}
+#nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(7px, -7px)}
+
+/* Hero */
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  margin-top:68px;
+  background-image: url('images/hero.jpg');
+  background-size:cover;
+  background-position:center;
+  border-bottom-left-radius:36px;
+  border-bottom-right-radius:36px;
+  overflow:hidden;
+}
+.hero .overlay{
+  position:absolute;inset:0;background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.18));
+}
+.hero-content{position:relative;color:white;padding:4rem 1rem;max-width:900px}
+.hero-title{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 .6rem;line-height:1.02;animation:slideIn 900ms both}
+.hero-title span{color: #fff9; font-weight:800}
+.hero-sub{margin:0 0 1.4rem;opacity:0.95}
+.hero-cta .btn{margin-right:0.6rem}
+
+/* Cards (chambres) */
+.section{padding:4rem 0}
+.section.alt{background:linear-gradient(180deg,#fff,#fbfcff)}
+.section-title{font-size:1.6rem;margin-bottom:1.2rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem}
+.card{background:white;border-radius:16px;box-shadow:0 6px 20px rgba(13,22,30,0.06);overflow:hidden;transition:transform 300ms}
+.card img{width:100%;height:250px;object-fit:cover;display:block}
+.card-body{padding:1.2rem}
+.card h3{margin:0 0 .4rem}
+.card p{margin:0 0 .8rem;color:var(--muted);font-size:0.95rem}
+.card:hover{transform:translateY(-6px)}
+
+/* Services grid */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem}
+.service-card{background:white;border-radius:16px;box-shadow:0 6px 20px rgba(13,22,30,0.06);overflow:hidden;transition:transform 300ms;text-align:center;display:flex;flex-direction:column}
+.service-card img{width:100%;height:220px;object-fit:cover;display:block}
+.service-card h3{margin:1rem 1rem 0.5rem;color:var(--text);font-size:1rem}
+.service-card p{margin:0.5rem 1rem 1rem;color:var(--muted);font-size:0.9rem;flex-grow:1}
+.service-card:hover{transform:translateY(-6px)}
+
+/* Services list */
+.services-list{display:flex;flex-wrap:wrap;gap:1rem;padding:0;margin:0;list-style:none}
+.services-list li{background:var(--glass);padding:0.8rem 1rem;border-radius:10px;min-width:170px}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px;transition:transform 300ms;box-shadow:0 6px 20px rgba(13,22,30,0.1)}
+.gallery-grid img:hover{transform:scale(1.05)}
+
+/* Contact / booking layout */
+.contact-section .contact-inner{display:grid;grid-template-columns:1fr 320px;gap:1.6rem;align-items:start}
+.contact-card{background:white;padding:1.2rem;border-radius:12px;box-shadow:0 8px 20px rgba(9,30,46,0.06)}
+.contact-info{background:linear-gradient(180deg,#fff,#fcfeff);padding:1.2rem;border-radius:12px;box-shadow:0 8px 20px rgba(9,30,46,0.04)}
+
+.booking-form label{display:block;margin-bottom:0.8rem;font-size:0.95rem;color:var(--muted)}
+.booking-form input, .booking-form textarea, .booking-form select{
+  width:100%;padding:0.6rem;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px;font-size:0.95rem;
+}
+.form-actions{display:flex;gap:0.7rem;margin-top:0.8rem;flex-wrap:wrap}
+
+/* Buttons */
+.btn{
+  display:inline-block;padding:0.6rem 1rem;border-radius:10px;background:var(--accent);color:white;text-decoration:none;border:0;cursor:pointer;transition:var(--transition);
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(15,23,42,0.06)}
+.btn.small{padding:0.35rem 0.6rem;font-size:0.9rem}
+.btn.wide{display:inline-block;width:100%;text-align:center}
+
+/* WhatsApp floating button */
+.whatsapp-fab{
+  position:fixed;right:18px;bottom:18px;background:transparent;border-radius:50%;z-index:60;padding:8px;
+  box-shadow:0 8px 20px rgba(15,23,42,0.12);display:flex;align-items:center;justify-content:center;
+}
+.whatsapp-fab img{width:46px;height:46px;display:block}
+
+/* Footer */
+.site-footer{padding:1.6rem 0;text-align:center;color:var(--muted);font-size:0.9rem}
+
+/* Animations */
+@keyframes slideIn {
+  from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+@keyframes fadeInUp {
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes scaleIn {
+  from{opacity:0;transform:scale(0.95)}
+  to{opacity:1;transform:scale(1)}
+}
+
+@keyframes slideInRight {
+  from{opacity:0;transform:translateX(-30px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+/* Animation des sections */
+.section{animation:fadeInUp 800ms ease-out}
+.section-title{animation:slideIn 600ms ease-out}
+.card{animation:scaleIn 500ms ease-out}
+.card:nth-child(1){animation-delay:0ms}
+.card:nth-child(2){animation-delay:100ms}
+.card:nth-child(3){animation-delay:200ms}
+
+.service-card{animation:scaleIn 500ms ease-out}
+.service-card:nth-child(1){animation-delay:0ms}
+.service-card:nth-child(2){animation-delay:80ms}
+.service-card:nth-child(3){animation-delay:160ms}
+.service-card:nth-child(4){animation-delay:240ms}
+.service-card:nth-child(5){animation-delay:320ms}
+.service-card:nth-child(6){animation-delay:400ms}
+.service-card:nth-child(7){animation-delay:480ms}
+.service-card:nth-child(8){animation-delay:560ms}
+
+/* Animation boutons */
+.btn{transition:all 300ms ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(15,118,110,0.3)}
+
+/* Animation images galerie */
+.gallery-grid img{animation:fadeInUp 600ms ease-out}
+.gallery-grid img:nth-child(1){animation-delay:0ms}
+.gallery-grid img:nth-child(2){animation-delay:80ms}
+.gallery-grid img:nth-child(3){animation-delay:160ms}
+.gallery-grid img:nth-child(4){animation-delay:240ms}
+.gallery-grid img:nth-child(5){animation-delay:320ms}
+.gallery-grid img:nth-child(6){animation-delay:400ms}
+.gallery-grid img:nth-child(7){animation-delay:480ms}
+.gallery-grid img:nth-child(8){animation-delay:560ms}
+.gallery-grid img:nth-child(9){animation-delay:640ms}
+.gallery-grid img:nth-child(10){animation-delay:720ms}
+
+/* Responsive */
+@media (max-width:900px){
+  .contact-section .contact-inner{grid-template-columns:1fr}
+  .hero{min-height:60vh}
+  #nav-toggle{display:block}
+  .main-nav{position:fixed;top:68px;right:0;background:white;width:100%;max-width:260px;height:calc(100% - 68px);transform:translateX(100%);transition:transform 300ms ease;box-shadow:-2px 0 12px rgba(10,20,30,0.15);padding:1rem;overflow-y:auto;z-index:40}
+  .main-nav.open{transform:translateX(0)}
+  .main-nav ul{flex-direction:column;gap:0.4rem}
+  .main-nav a{display:block;padding:0.8rem 1rem;border-radius:8px}
+  .main-nav a:hover{background:rgba(15,118,110,0.1)}
+}
+
+/* === HERO SLIDESHOW — 5 images === */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Durée totale du slideshow */
+  animation: heroSlider 25s infinite ease-in-out;
+}
+
+/* --- Animation slideshow sur 5 images --- */
+@keyframes heroSlider {
+  0% {
+    background-image: url("images/hero.jpg");
+  }
+  20% {
+    background-image: url("images/hero.jpg");
+  }
+
+  25% {
+    background-image: url("images/room-suite.jpg");
+  }
+  40% {
+    background-image: url("images/room-suite.jpg");
+  }
+
+  45% {
+    background-image: url("images/gallery-7.jpg");
+  }
+  60% {
+    background-image: url("images/gallery-7.jpg");
+  }
+
+  65% {
+    background-image: url("images/room-standard.jpg");
+  }
+  80% {
+    background-image: url("images/room-standard.jpg");
+  }
+
+  85% {
+    background-image: url("images/piscine.jpg");
+  }
+  100% {
+    background-image: url("images/piscine.jpg");
+  }
+}
+
+/* --- Overlay sombre --- */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+/* --- Textes du HERO --- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

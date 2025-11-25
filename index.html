@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hôtel Le Terminal — Accueil</title>
+  <meta name="description" content="Hôtel Le Terminal — confort, charme et service. Réservez maintenant via WhatsApp." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- En-tête / navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <img src="images/logo.png" alt="Logo Hôtel Le Terminal">
+      </a>
+      <button id="nav-toggle" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#rooms">Chambres</a></li>
+          <li><a href="#gallery">Galerie</a></li>
+          <li><a href="#contact">Contact / Réserver</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO: image de fond + message principal -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h1 class="hero-title">Bienvenue à <span>l'Hôtel Le Terminal</span></h1>
+      <p class="hero-sub">Confort — Service — Proximité. Réservez facilement via WhatsApp.</p>
+      <div class="hero-cta">
+        <!-- Numéro WhatsApp Hôtel Le Terminal -->
+        <a id="quick-book" class="btn" href="https://wa.me/22870115820?text=Bonjour%20-%20Je%20souhaite%20réserver%20une%20chambre" target="_blank" rel="noopener">Réserver</a>
+        <a class="btn ghost" href="#services">Découvrir nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Nos Services</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <img src="images/room-standard.jpg" alt="Chambres climatisées & ventilées" loading="lazy">
+          <h3>Chambres climatisées & ventilées</h3>
+          <p>Confort optimal avec climatisation performante et ventilation naturelle. Salle de bain privée et WiFi haut débit.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/roof-tof.jpg" alt="Roof Tof" loading="lazy">
+          <h3>Roof Tof</h3>
+          <p>Espace en terrasse avec vue panoramique. Idéal pour vos événements, réceptions et moments de détente.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/place des fetes.jpg" alt="Place des Fêtes" loading="lazy">
+          <h3>Place des Fêtes</h3>
+          <p>Grande surface polyvalente pour vos événements, mariages, séminaires et célébrations.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/salle de conference.jpg" alt="Salle de conférence" loading="lazy">
+          <h3>Salle de conférence</h3>
+          <p>Équipée pour vos réunions professionnelles, séminaires et formations d'entreprise.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/superette.jpg" alt="Superette" loading="lazy">
+          <h3>Superette</h3>
+          <p>Boutique de commodités pour tous vos besoins quotidiens et articles de toilette.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/pressing.jpg" alt="Pressing" loading="lazy">
+          <h3>Pressing</h3>
+          <p>Service de nettoyage et repassage de vos vêtements avec qualité professionnelle.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/piscine.jpg" alt="Piscine" loading="lazy">
+          <h3>Piscine</h3>
+          <p>Bassin de détente pour rafraîchissement et loisirs en famille ou entre amis.</p>
+        </article>
+        <article class="service-card">
+          <img src="images/discotheque.jpg" alt="Discothèque" loading="lazy">
+          <h3>Discothèque</h3>
+          <p>Espace de divertissement nocturne avec ambiance festive et animations musicales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Chambres -->
+  <section id="rooms" class="section">
+    <div class="container">
+      <h2 class="section-title">Nos Chambres</h2>
+      <div class="cards">
+        <!-- Card chambre (répliquer/modifier selon besoin) -->
+        <article class="card">
+          <img src="images/room-deluxe.jpg" alt="Chambre Climatisée" loading="lazy">
+          <div class="card-body">
+            <h3>Chambre Climatisée</h3>
+            <p>Confort optimal, climatisation performante, salle de bain privée et connexion WiFi haut débit.</p>
+            <div class="card-actions">
+              <button class="btn small open-book" data-room="Chambre Climatisée">Réserver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/room-standard.jpg" alt="Chambre Ventilée" loading="lazy">
+          <div class="card-body">
+            <h3>Chambre Ventilée</h3>
+            <p>Confort accessible, ventilation naturelle et mécanique, salle de bain privée et rangement sécurisé.</p>
+            <div class="card-actions">
+              <button class="btn small open-book" data-room="Chambre Ventilée">Réserver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/room-suite.jpg" alt="Suite Prestige" loading="lazy">
+          <div class="card-body">
+            <h3>Suite Prestige</h3>
+            <p>Espaces spacieux avec salon séparé, service VIP, vue sur la place des fêtes.</p>
+            <div class="card-actions">
+              <button class="btn small open-book" data-room="Suite Prestige">Réserver</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Galerie</h2>
+      <div class="gallery-grid">
+        <img src="images/gallery-1.jpg" alt="Image 1" loading="lazy">
+        <img src="images/gallery-2.jpg" alt="Image 2" loading="lazy">
+        <img src="images/gallery-3.jpg" alt="Image 3" loading="lazy">
+        <img src="images/gallery-4.jpg" alt="Image 4" loading="lazy">
+        <img src="images/gallery-5.jpg" alt="Image 5" loading="lazy">
+        <img src="images/gallery-6.jpg" alt="Image 6" loading="lazy">
+        <img src="images/gallery-7.jpg" alt="Image 7" loading="lazy">
+        <img src="images/gallery-8.jpg" alt="Image 8" loading="lazy">
+        <img src="images/gallery-9.jpg" alt="Image 9" loading="lazy">
+        <img src="images/gallery-10.jpg" alt="Image 10" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & réservation -->
+  <section id="contact" class="section contact-section">
+    <div class="container contact-inner">
+      <div class="contact-card">
+        <h2>Réservation</h2>
+        <p>Remplissez le formulaire ci-dessous — nous vous enverrons un message sur WhatsApp pour confirmer.</p>
+
+        <!-- Formulaire local: on prépare un message WhatsApp via JS -->
+        <form id="booking-form" class="booking-form" onsubmit="return false;">
+          <label>
+            Nom complet
+            <input type="text" id="guest-name" required placeholder="Votre nom complet">
+          </label>
+
+          <label>
+            Téléphone (WhatsApp)
+            <input type="tel" id="guest-phone" required placeholder="+228XXXXXXXX">
+          </label>
+
+          <label>
+            Chambre souhaitée
+            <select id="guest-room">
+              <option value="">-- Sélectionner une option --</option>
+              <option value="Chambre Climatisée">Chambre Climatisée</option>
+              <option value="Chambre Ventilée">Chambre Ventilée</option>
+              <option value="Suite Prestige">Suite Prestige</option>
+              <option value="Salle de conférence">Salle de conférence</option>
+              <option value="Place des Fêtes">Place des Fêtes</option>
+            </select>
+          </label>
+
+          <label>
+            Date d'arrivée
+            <input type="date" id="guest-checkin" required>
+          </label>
+
+          <label>
+            Date de départ
+            <input type="date" id="guest-checkout" required>
+          </label>
+
+          <label>
+            Message (optionnel)
+            <textarea id="guest-msg" rows="3" placeholder="Préférences, nombre d'adultes/enfants..."></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button id="send-whatsapp" class="btn">Envoyer via WhatsApp</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Informations & contact direct -->
+      <aside class="contact-info">
+        <h3>Contact rapide</h3>
+        <p>Téléphone / WhatsApp : <strong>+228 70 11 58 20</strong></p>
+        <p>Adresse : BP 882, Agbodrafo-Lac 3</p>
+        <p>Heures d'ouverture : 24h/24h</p>
+        <a class="btn wide" href="https://wa.me/22870115820?text=Bonjour%20-%20Je%20souhaite%20plus%20d'informations" target="_blank" rel="noopener">Contact WhatsApp</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Bouton flottant WhatsApp -->
+  <a id="whatsapp-fab" class="whatsapp-fab" href="https://wa.me/22870115820?text=Bonjour%20-%20je%20voudrais%20informations%20sur%20l'hôtel" target="_blank" rel="noopener" aria-label="Contact WhatsApp">
+    <img src="images/whatsapp-icon.svg" alt="WhatsApp">
+  </a>
+
+  <!-- Pied de page -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Hôtel Le Terminal — Tous droits réservés.</p>
+      <p class="small">Contact : <strong>leterminal201@gmail.com</strong> | Téléphone : <strong>+228 70 11 58 20</strong></p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
