@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(msg) message += `Remarques: ${msg}%0A`;
 
     // Si WHATSAPP_NUMBER n'est pas remplacé, ouvrir un wa.me générique (ceci provoquera une erreur si absent)
-    const waNumber = WHATSAPP_NUMBER && WHATSAPP_NUMBER !== 'PHONE_NUMBER' ? WHATSAPP_NUMBER : phone.replace(/\D/g,'');
+    const waNumber = WHATSAPP_NUMBER && WHATSAPP_NUMBER !== '22870115820' ? WHATSAPP_NUMBER : phone.replace(/\D/g,'');
 
     const url = `https://wa.me/${waNumber}?text=${message}`;
     window.open(url, '_blank');
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const quickBook = document.getElementById('quick-book');
   if(quickBook){
     const href = quickBook.getAttribute('href');
-    if(href.includes('PHONE_NUMBER') && WHATSAPP_NUMBER !== 'PHONE_NUMBER'){
+    if(href.includes('PHONE_NUMBER') && WHATSAPP_NUMBER !== '22870115820'){
       quickBook.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeMessage('Bonjour - Je souhaite réserver une chambre')}`);
     }
   }
